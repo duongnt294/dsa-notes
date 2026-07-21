@@ -1,0 +1,32 @@
+ENVIRONMENT NOTES
+1.Itellij IDEA
+Theo em hiểu IntelliJ IDEA là IDE dùng để lập trình Java.
+Nó giúp mình tạo project, viết code, chạy chương trình, debug và tích hợp Git/GitHub.
+
+2.JDK
+JDK là bộ công cụ để phát triển Java.
+JDK chứa trình biên dịch javac.
+Nếu không có JDK thì không thể biên dịch mã nguồn Java và chạy chương trình.
+
+3. Git
+  Git là hệ thống quản lý phiên bản.
+  Git giúp mình:
+- Lưu lịch sử code.
+- Quay lại phiên bản cũ khi cần.
+- Theo dõi những thay đổi của project.
+- Hỗ trợ nhiều người cùng làm một project.
+  Các lệnh git cơ bản:
+  - git status: kiểm tra trạng thái.
+  - git add: đưa thay đổi vào Staging Area.
+  - git commit: tạo snapshot (một phiên bản lưu).
+  - git push: đẩy commit lên GitHub.
+
+ 4. GitHub
+  Theo em hiểu, GitHub là nền tảng lưu trữ Git Repository trên Internet.
+   GitHub giúp sao lưu code, chia sẻ project, làm việc nhóm .
+   Sau khi commit bằng Git trên máy, mình sử dụng git push để đồng bộ các commit lên GitHub.
+
+ 5.leetcode
+ LeetCode là website luyện Data Structures & Algorithms.
+ Sau khi học Java cơ bản mình sẽ dùng Java để giải các bài trên LeetCode.
+
