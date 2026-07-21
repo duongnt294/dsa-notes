@@ -1,0 +1,132 @@
+Java Basic Notes
+1. Variable (Biến)
+Biến dùng để lưu trữ dữ liệu để chương trình sử dụng. Khi cần có thể
+cập nhật giá trị của biến mà không phải sửa ởnhiều chỗ trong chương trình.
+Ví dụ:
+
+int a = 19;                  // số nguyên
+double b = 3.75;             // số thực
+char c = 'A';              // ký tự
+boolean d = true;      // đúng / sai
+String name = "Duong";         // chuỗi ký tự
+
+2. if else
+  - Mục đích:
+  if else dùng để kiểm tra điều kiện và đưa ra quyết định. Nếu điều kiện đúng
+  thì thực hiện khối lệnh trong if, nếu sai thì thực hiện khối lệnh trong else.
+  - Khi nào dùng:
+  Khi chương trình cần xử lý khác nhau tùy theo điều kiện.
+  - Ví dụ:
+
+  int score = 7;
+
+  if (score >= 5) {
+      System.out.println("pass");
+  } else {
+      System.out.println("fail");
+  }
+
+  3. for
+  - Mục đích:
+  for dùng để lặp lại một đoạn lệnh khi biết trước số lần lặp.
+  - Khi nào dùng:
+  Khi cần thực hiện một công việc nhiều lần và biết trước sẽ lặp bao nhiêu lần.
+  - Cú pháp:
+  for (khởi tạo; điều kiện; cập nhật) {
+      // Khối lệnh
+  }
+
+  - Ví dụ:
+
+  for (int i = 1; i <= 5; i++) {
+      System.out.println(i);
+  }
+
+4.4. while
+  - Mục đích:
+  while dùng để lặp lại một đoạn lệnh khi chưa biết trước số lần lặp.
+  - Khi nào dùng:
+  Khi chương trình chỉ dừng khi điều kiện không còn đúng.
+  - Cú pháp:
+
+  while (điều kiện) {
+      // Khối lệnh
+  }
+
+  - Ví dụ:
+
+  int i = 1;
+
+  while (i <= 5) {
+      System.out.println(i);
+      i++;
+  }
+
+  5. switch case
+  - Mục đích:
+  switch case dùng để lựa chọn một trong nhiều trường hợp dựa trên cùng một giá trị.
+  - Khi nào dùng:
+  Khi cần kiểm tra nhiều trường hợp của cùng một biến. switch case giúp code gọn và
+  dễ đọc hơn if else.
+  - Cú pháp:
+
+  switch (biến) {
+      case giá_trị_1:
+          // Khối lệnh
+          break;
+
+      case giá_trị_2:
+          // Khối lệnh
+          break;
+
+      default:
+          // Trường hợp còn lại
+  }
+  - Ví dụ:
+
+  int day = 2;
+
+  switch (day) {
+      case 1:
+          System.out.println("Monday");
+          break;
+
+      case 2:
+          System.out.println("Tuesday");
+          break;
+
+      case 3:
+          System.out.println("Wednesday");
+          break;
+
+      default:
+          System.out.println("Khong hop le");
+  }
+
+  Kết quả:
+  Tuesday
+  10. Method (Hàm)
+  - Mục đích:
+  Method dùng để nhóm các câu lệnh thực hiện một chức năng nhất định.
+   Khi cần sử dụng lại chỉ cần gọi method,giúp chương trình gọn gàng, dễ đọc và tránh lặp code.
+  - Khi nào dùng:
+  Khi một đoạn code được sử dụng nhiều lần hoặc muốn chia chương trình thành các chức năng nhỏ.
+
+  - Cú pháp:
+
+  public static kiểu_trả_về tênMethod(tham_số) {
+      // Khối lệnh
+  }
+
+  - Ví dụ:
+
+  public static void hello() {
+      System.out.println("Hello Java");
+  }
+
+  public static void main(String[] args) {
+      hello();
+  }
+
+  Kết quả:
+  Hello Java
