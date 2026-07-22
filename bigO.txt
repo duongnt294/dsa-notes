@@ -1,0 +1,127 @@
+1. Big-O
+
+- Mục đích:
+Big-O dùng để đo độ phức tạp của thuật toán, giúp biết chương trình chạy nhanh hay chậm khi dữ liệu tăng lên.
+
+- Khi nào dùng:
+Dùng để so sánh hai hoặc nhiều thuật toán, từ đó chọn thuật toán tối ưu hơn.
+- Ý nghĩa:
+Big-O không đo thời gian chạy bằng giây mà đo tốc độ tăng của số phép tính khi dữ liệu (n) tăng.
+
+Ví dụ:
+
+Nếu n = 10
+Thuật toán A thực hiện khoảng 10 phép tính.
+Thuật toán B thực hiện khoảng 100 phép tính.
+
+Khi n = 1000
+
+Thuật toán A thực hiện khoảng 1000 phép tính.
+Thuật toán B thực hiện khoảng 1 000 000 phép tính.
+
+Thuật toán A sẽ nhanh hơn rất nhiều.
+
+=> Big-O giúp dự đoán hiệu năng của thuật toán khi dữ liệu lớn.
+
+Các mức Big-O cần nhớ và sắp xếp nhanh đến chậm
+
+O(1)
+   ↓
+O(log n)
+   ↓
+O(n)
+   ↓
+O(n log n)
+   ↓
+O(n²)
+   ↓
+O(2ⁿ)
+   ↓
+O(n!)
+
+   Ví dụ
+O(1)
+int x = arr[4];
+System.out.println(x)
+dù mảng có bao nhiêu phần tử thì tốc độ vẫn thế
+
+O(logn)
+int binarySearch(int[] arr, int target) {
+    int left = 0, right = arr.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+với n=8
+8 phần tử
+8 → 4 → 2 → 1
+Mỗi lần tìm kiếm chỉ giữ lại một nửa số phần tử.
+Tổng cộng khoảng 3 lần so sánh.
+=> O(log n).
+
+O(n)
+for (int i = 0; i < n; i++) {
+    System.out.println(arr[i]);
+}
+Phải duyệt hết mảng.
+
+O(n²)
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        ...
+    }
+}
+Hai vòng lặp lồng nhau.
+
+O(2ⁿ)
+public static int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+O(2!)
+găp nhiều trong backtracking
+public class Main {
+
+    static char[] a = {'A', 'B', 'C'};
+    static boolean[] used = new boolean[3];
+    static char[] x = new char[3];
+
+    public static void Try(int k) {
+
+        for (int i = 0; i < 3; i++) {
+
+            if (!used[i]) {
+
+                x[k] = a[i];
+                used[i] = true;
+
+                if (k == 2) {
+
+                    for (int j = 0; j < 3; j++) {
+                        System.out.print(x[j]);
+                    }
+
+                    System.out.println();
+
+                } else {
+
+                    Try(k + 1);
+
+                }
+
+                used[i] = false;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Try(0);
+    }
+}
