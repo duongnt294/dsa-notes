@@ -1,0 +1,97 @@
+1. Array (Mảng)
+
+- Khái niệm:
+Array là cấu trúc dữ liệu dùng để lưu nhiều phần tử có cùng kiểu dữ liệu trong một biến.
+
+- Mục đích:
+Giúp quản lý nhiều dữ liệu cùng kiểu một cách dễ dàng, thay vì phải khai báo nhiều biến riêng lẻ.
+
+- Cách dùng:
+Dùng khi cần lưu một tập dữ liệu có cùng kiểu và biết trước số lượng phần tử.
+
+Ví dụ:
+
+// Không dùng Array
+int a = 10;
+int b = 20;
+int c = 30;
+
+// Dùng Array
+int[] arr = {10, 20, 30};
+
+
+2.Hashing
+
+- Khái niệm:
+Hashing là kỹ thuật lưu trữ và tìm kiếm dữ liệu thông qua một khóa (key), giúp truy cập dữ liệu rất nhanh.
+
+- Mục đích:
+Giúp tìm kiếm, thêm và kiểm tra dữ liệu nhanh hơn so với việc duyệt từng phần tử.
+
+- Cách dùng:
+Dùng khi cần:
+- Kiểm tra một phần tử đã tồn tại hay chưa.
+- Đếm số lần xuất hiện của phần tử.
+- Lưu dữ liệu theo cặp key - value.
+
+Ví dụ:
+
+HashMap<String, Integer> map = new HashMap<>();
+
+map.put("Apple", 10);
+map.put("Banana", 20);
+
+System.out.println(map.get("Apple"));
+Giải thích:
+
+- put(key, value): Thêm dữ liệu vào HashMap.
+- "Apple" là Key.
+- 10 là Value.
+
+HashMap hiện có:
+
+Apple  → 10
+Banana → 20
+
+System.out.println(map.get("Apple"));
+
+Giải thích:
+
+- get(key): Lấy Value theo Key.
+- Tìm Key "Apple" sẽ trả về 10.
+
+Kết quả:
+
+10
+ ví dụ 2:
+HashSet<Integer> set = new HashSet<>();
+
+Giải thích:
+
+- HashSet: Cấu trúc dữ liệu chỉ lưu Value.
+- Integer: Kiểu dữ liệu của phần tử.
+- new: Tạo một đối tượng HashSet mới.
+
+set.add(10);
+set.add(20);
+set.add(30);
+
+Giải thích:
+
+- add(value): Thêm phần tử vào HashSet.
+
+HashSet hiện có:
+
+10
+20
+30
+
+System.out.println(set.contains(20));
+
+Giải thích:
+
+- contains(value): Kiểm tra phần tử có tồn tại hay không.
+
+Kết quả:
+
+true
