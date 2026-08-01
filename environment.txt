@@ -3,10 +3,71 @@ ENVIRONMENT NOTES
 Theo em hiểu IntelliJ IDEA là IDE dùng để lập trình Java.
 Nó giúp mình tạo project, viết code, chạy chương trình, debug và tích hợp Git/GitHub.
 
-2.JDK
-JDK là bộ công cụ để phát triển Java.
-JDK chứa trình biên dịch javac.
-Nếu không có JDK thì không thể biên dịch mã nguồn Java và chạy chương trình.
+2. JDK (Java Development Kit)
+Khái niệm:
+JDK (Java Development Kit) là bộ công cụ dùng để phát triển (lập trình) Java.
+JDK cung cấp các công cụ để:
+Viết chương trình Java.
+Biên dịch chương trình Java.
+Chạy chương trình Java.
+Debug và kiểm tra chương trình Java.
+
+JDK
+│
+├── javac (Compiler)
+├── java
+├── jar
+├── javadoc
+├── ...
+└── JRE
+
+3.JVM (Java Virtual Machine)
+Khái niệm
+JVM (Java Virtual Machine) là máy ảo Java, có nhiệm vụ đọc file .class (Bytecode), dịch sang
+mã máy và thực thi để CPU chạy.
+Quy trình hoạt động:
+Main.java
+(Chương trình Java)
+      │
+      ▼
+javac
+(Biên dịch)
+      │
+      ▼
+Main.class
+(Bytecode)
+      │
+      ▼
+java Main
+(Khởi động JVM)
+      │
+      ▼
+JVM
+(Máy ảo Java)
+      │
+      ▼
+Tìm hàm
+
+public static void main(String[] args)
+
+      │
+      ▼
+Thực thi chương trình
+      │
+      ▼
+Dịch Bytecode thành mã máy
+      │
+      ▼
+CPU thực thi
+
+4. JRE (Java Runtime Environment)
+Khái niệm
+JRE (Java Runtime Environment) là môi trường dùng để chạy chương trình Java.
+JRE cung cấp các thành phần cần thiết để thực thi chương trình Java.
+JRE = JVM + Java Standard Library
+Cung cấp JVM để thực thi chương trình Java.
+Cung cấp Java Standard Library cho chương trình sử dụng.
+Là môi trường để chạy các file .class.
 
 3. Git
   Git là hệ thống quản lý phiên bản.
@@ -15,12 +76,104 @@ Nếu không có JDK thì không thể biên dịch mã nguồn Java và chạy 
 - Quay lại phiên bản cũ khi cần.
 - Theo dõi những thay đổi của project.
 - Hỗ trợ nhiều người cùng làm một project.
-  Các lệnh git cơ bản:
-  - git status: kiểm tra trạng thái.
-  - git add: đưa thay đổi vào Staging Area.
-  - git commit: tạo snapshot (một phiên bản lưu).
-  - git push: đẩy commit lên GitHub.
 
+Kiến trúc Git:
+Working Directory
+        │
+git add
+        ▼
+Staging Area
+        │
+git commit
+        ▼
+Local Repository (.git)
+        │
+git push
+        ▼
+Remote Repository (GitHub)
+
+Working Directory: Nơi mình đang code.
+Staging Area: Nơi chứa các file chuẩn bị commit.
+Local Repository: Lưu lịch sử commit trên máy.
+Remote Repository: Repository trên GitHub.
+
+Các lệnh Git cơ bản
+git status: Kiểm tra trạng thái project.
+git add: Đưa thay đổi vào Staging Area.
+git commit: Tạo snapshot (một phiên bản lưu).
+git pull: Lấy code mới nhất từ GitHub về máy.
+git push: Đẩy commit lên GitHub.
+
+Git Workflow
+Clone
+↓
+Code
+↓
+git add
+↓
+git commit
+↓
+git push
+↓
+Pull Request
+↓
+Review
+↓
+Merge
+
+Clone → Lần đầu tiên tải project từ GitHub về máy.
+Pull → Cập nhật project đã có trên máy.
+Pull Request (PR) → Xin phép gộp code vào branch chính.
+Review → Người khác kiểm tra code.
+Merge → Gộp code đã được duyệt vào branch chính.
+
+Branch
+Branch (nhánh) là nơi phát triển một tính năng riêng, không ảnh hưởng đến nhánh chính.
+Ví dụ
+main
+feature-login
+feature-payment
+Lệnh
+git branch - xem các nhánh branch
+git branch feature-login-tạo branch
+git switch feature-login-chuyển branch
+
+Merge
+Merge dùng để gộp code từ một branch vào branch khác.(thường là gộp vào main)
+
+Conflict
+Conflict xảy ra khi hai branch cùng sửa một vị trí trong cùng một file và
+Git không biết chọn phiên bản nào.
+Ví dụ
+Branch A
+int a = 10;
+Branch B
+int a = 20;
+↓
+Git báo Conflict.
+
+Resolve Conflict
+Là quá trình giải quyết Conflict.
+Git sẽ đánh dấu:
+<<<<<<< HEAD
+Code của branch hiện tại
+=======
+Code của branch khác
+>>>>>>> feature-login
+Lập trình viên sẽ:
+Chọn một phiên bản.
+Hoặc sửa thành phiên bản mới.
+Sau đó:
+git add .
+git commit
+Conflict được giải quyết.
+
+Pull Request (PR)
+Pull Request là yêu cầu gộp code từ branch của mình vào branch chính.
+
+Rebase
+Rebase cũng dùng để gộp branch nhưng không tạo merge commit,
+giúp lịch sử commit thẳng và gọn hơn.
  4. GitHub
   Theo em hiểu, GitHub là nền tảng lưu trữ Git Repository trên Internet.
    GitHub giúp sao lưu code, chia sẻ project, làm việc nhóm .
@@ -30,3 +183,6 @@ Nếu không có JDK thì không thể biên dịch mã nguồn Java và chạy 
  LeetCode là website luyện Data Structures & Algorithms.
  Sau khi học Java cơ bản mình sẽ dùng Java để giải các bài trên LeetCode.
 
+6. Review
+-tìm hểu kỹ JDK, jvm,jre
+-git c
