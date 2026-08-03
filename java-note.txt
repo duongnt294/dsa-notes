@@ -130,3 +130,211 @@ String name = "Duong";         // chuỗi ký tự
 
   Kết quả:
   Hello Java
+  ======================================================================================
+
+ 1.Mảng(tĩnh,động)
+ - Static Array (Mảng tĩnh)
+ Khái niệm
+ Static Array là mảng có kích thước cố định ngay từ khi tạo.
+ Sau khi tạo không thể thay đổi kích thước.
+
+ Đặc điểm
+ Kích thước cố định.
+ Truy cập bằng index.
+ Các phần tử cùng kiểu dữ liệu.
+ Bộ nhớ liên tiếp.
+
+ Khi nào dùng?
+ Biết trước số lượng phần tử.
+ Không cần thêm hoặc xóa phần tử.
+
+ Ví dụ Java
+ int[] arr = new int[5]; hoặc int[] arr = {1,2,3,4,5};
+
+ - Dynamic Array (Mảng động)
+ Khái niệm
+ Dynamic Array là mảng có thể thay đổi kích thước trong quá trình chạy chương trình.
+
+Đặc điểm
+Kích thước có thể thay đổi.
+Các phần tử cùng kiểu dữ liệu.
+Truy cập bằng chỉ số (index).
+Khi đầy, mảng sẽ tự mở rộng kích thước.
+
+Mục đích
+Giúp lưu trữ dữ liệu khi không biết trước số lượng phần tử
+hoặc cần thêm/xóa phần tử linh hoạt.
+
+Khi nào dùng?
+Dùng khi:
+Không biết trước số lượng phần tử.
+Cần thêm hoặc xóa phần tử trong quá trình chạy chương trình.
+Ví dụ:
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);
+list.add(20);
+list.add(30);
+
+2.List
+
+Khái niệm
+List là Interface trong Java, dùng để lưu trữ một danh sách các phần tử theo thứ tự.
+Interface là bản thiết kế (quy định các chức năng), không thể tạo đối
+tượng trực tiếp. Các lớp như ArrayList và LinkedList sẽ triển khai (implement) List.
+
+Đặc điểm
+Có thứ tự (giữ đúng thứ tự thêm vào).
+Cho phép phần tử trùng nhau.
+Truy cập bằng chỉ số (index).
+Có thể thêm, xóa, sửa phần tử.
+
+Mục đích
+Dùng để quản lý danh sách dữ liệu cần thao tác linh hoạt như thêm, xóa, duyệt.
+
+Dùng khi:
+Cần lưu danh sách có thứ tự.
+Chấp nhận phần tử trùng nhau.
+Cần thêm hoặc xóa phần tử thường xuyên.
+Khai báo :
+List<Integer> list = new ArrayList<>(); hoặc List<Integer> list = new LinkedList<>();
+Ví dụ:
+List<Integer> list = new ArrayList<>();
+list.add(10);
+list.add(20);
+list.add(20);
+System.out.println(list);
+Kết quả:
+[10, 20, 20] → List cho phép trùng nhau.
+
+Linked List (Danh sách liên kết)
+
+Khái niệm
+Linked List là cấu trúc dữ liệu gồm nhiều Node liên kết với nhau bằng next.
+Khác với Array, các phần tử không cần lưu liên tiếp trong bộ nhớ.
+
+Đặc điểm
+Gồm nhiều Node.
+Mỗi Node chứa:
+Data (dữ liệu).
+Next (tham chiếu đến Node tiếp theo).
+Kích thước thay đổi linh hoạt.
+Không truy cập trực tiếp bằng index.
+
+Mục đích
+Dùng để lưu trữ dữ liệu khi cần thêm hoặc xóa phần tử linh hoạt.
+Khi nào dùng?
+
+Dùng khi:
+Thường xuyên thêm/xóa phần tử.
+Không cần truy cập nhanh bằng index
+
+3.Map
+  Khái niệm
+  Map là cấu trúc dữ liệu dùng để lưu dữ liệu theo cặp Key – Value
+  Mỗi Key là duy nhất, mỗi Key sẽ ánh xạ tới một Value.
+
+  Đặc điểm
+  Lưu theo cặp Key → Value.
+  Key không được trùng.
+  Value được phép trùng.
+  Tìm kiếm dữ liệu thông qua Key.
+
+  Mục đích
+  Dùng để tra cứu dữ liệu nhanh theo một khóa.
+
+  Khi nào dùng?
+
+  Dùng khi:
+  Muốn lưu dữ liệu theo dạng Tên → Giá trị.
+  Muốn tìm kiếm nhanh theo Key.
+
+  Ví dụ:
+  HashMap<String, Integer> map = new HashMap<>();
+  map.put("An", 9);
+  map.put("Binh", 8);
+  System.out.println(map.get("An"));
+  Kết quả:9;
+
+ 4.Set
+ Khái niệm
+ Set là cấu trúc dữ liệu dùng để lưu các phần tử duy nhất (không trùng nhau).
+
+ Đặc điểm
+ Không cho phép phần tử trùng nhau.
+ Chỉ lưu giá trị, không có Key → Value.
+ Thêm phần tử đã tồn tại sẽ không báo lỗi nhưng cũng không thêm.
+
+ Mục đích
+ Dùng để:
+ Loại bỏ phần tử trùng.
+ Kiểm tra một phần tử đã xuất hiện hay chưa.
+
+ Dùng khi:
+ Cần kiểm tra trùng lặp.
+ Chỉ cần lưu giá trị, không cần lưu theo cặp Key → Value.
+
+ Ban đầu: 10 10 20 30 30 ; đưa vào set: 10 20 30;
+
+ Ví dụ Java
+ HashSet<Integer> set = new HashSet<>();
+ set.add(10);
+ set.add(20);
+ set.add(20);
+ System.out.println(set.contains(20));
+ Kết quả: true
+
+ 7. Queue (Hàng đợi)
+ Khái niệm
+ Queue là cấu trúc dữ liệu hoạt động theo nguyên tắc FIFO (First In First Out).
+ Vào trước → Ra trước.
+
+ Đặc điểm
+ Thêm phần tử ở cuối hàng (Rear).
+ Lấy phần tử ở đầu hàng (Front).
+ Phần tử vào trước sẽ ra trước.
+
+ Dùng khi:
+ Xử lý các tác vụ theo thứ tự.
+ Thuật toán BFS.
+ Hệ thống xếp hàng (in tài liệu, đặt vé, xử lý request...).
+
+Ví dụ:
+Queue<Integer> q = new LinkedList<>();
+q.offer(10);
+q.offer(20);
+q.offer(30);
+System.out.println(q.peek()); // 10
+q.poll();
+System.out.println(q.peek()); // 20
+
+5.Stack (Ngăn xếp)
+
+  Khái niệm
+  Stack là cấu trúc dữ liệu hoạt động theo nguyên tắc LIFO (Last In First Out).
+  Vào sau → Ra trước.
+
+  Đặc điểm
+  Chỉ thêm và xóa ở đỉnh Stack (Top).
+  Phần tử thêm sau sẽ được lấy ra trước.
+  Không truy cập trực tiếp các phần tử ở giữa.
+
+  Mục đích
+  Dùng để xử lý dữ liệu theo nguyên tắc vào sau ra trước.
+
+  Dùng khi:
+  Undo/Redo.
+  Quay lui (Backtracking).
+  Kiểm tra dấu ngoặc.
+  Duyệt DFS.
+  Lưu lời gọi hàm (Call Stack).
+
+ Ví dụ Java
+ Stack<Integer> st = new Stack<>();
+
+ st.push(10);
+ st.push(20);
+ st.push(30);
+ System.out.println(st.peek()); // 30
+ st.pop();
+ System.out.println(st.peek()); // 20
+
